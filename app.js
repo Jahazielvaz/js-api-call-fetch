@@ -1,11 +1,21 @@
-let time = 0;
+// let time = 0;
+//
+// let timer = setInterval(() => {
+//
+//   let newTime = time += 1;
+//   console.log(`${newTime} seconds have passed`)
+//
+//   if(newTime >= 10){
+//     clearInterval(timer)
+//   }
+// }, 1000);
 
-let timer = setInterval(() => {
+// console.log(__dirname);
+// console.log(__filename);
 
-  let newTime = time += 1;
-  console.log(`${newTime} seconds have passed`)
+// This totally works in regular js as well
+let func1 = () =>  console.log('I love this passing');
 
-  if(newTime >= 10){
-    clearInterval(timer)
-  }
-}, 1000);
+let func2 = (fun) => fun();
+
+func2(func1);
