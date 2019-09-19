@@ -27,11 +27,19 @@
 //
 // console.log(operations.adder(23, 42387));
 
-//EVENTS MODULE
+//EVENTS MODULE 1
+// let events = require('events');
+//
+// let myEmitter = new events.EventEmitter();
+//
+// myEmitter.on('customEvent', (num1, num2) => console.log(`The total is ${num1 * num2}`));
+//
+// myEmitter.emit('customEvent', 330, 50);
+
+// EVENTS MODULE 2
 let events = require('events');
+let util = require('util');
 
-let myEmitter = new events.EventEmitter();
+let Person = (name) => this.name = name;
 
-myEmitter.on('customEvent', (num1, num2) => console.log(`The total is ${num1 * num2}`));
-
-myEmitter.emit('customEvent', 330, 50);
+util.inherits(Person, events.EventEmitter())
