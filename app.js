@@ -20,4 +20,6 @@
 //
 // func2(func1);
 
-let counter = require('./counter');
+let operations = require('./stuff');
+
+console.log(operations.adder(23, 42387));
