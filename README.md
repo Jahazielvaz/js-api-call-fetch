@@ -1,13 +1,13 @@
 ## DEFINITIONS
-***Function Expressions:*** instead of directly naming the function you create an anonymous function and assign it to a variable name, and that's what's known as a function expression.
+**Function Expressions:** instead of directly naming the function you create an anonymous function and assign it to a variable name, and that's what's known as a function expression.
 Passing Functions Through Other Functions: You can pass one function as a parameter and execute it within the current function
 
-Module Patterns/module.exports: Here you specify which aspects of a module you want to make available, and you do this by setting the module.exports equal to the names of the methods you want to include within it. These can be stored as an object, as standalone methods, etc.
+*Module Patterns/module.exports:* Here you specify which aspects of a module you want to make available, and you do this by setting the module.exports equal to the names of the methods you want to include within it. These can be stored as an object, as standalone methods, etc.
   In other words, you can export through an object literal, dot notation directly in the method, or creating the method ahead of time and storing it through dot notation underneath.
 
 Require: This allows you to access the methods returned by the module.exports of the module of choice. You invoke this by including the path within the require() method. And of course it's a good idea to store it in a variable, so you can access it easier.
 
-Event Module: This is a core module. The module is called "events". One of the default properties returned by this module is the event emitter, which we can use to create custom events, and react to those events when they are emitted. These custom events can be whatever you want. The event emitter is a constructor.
+***Event Module:*** This is a core module. The module is called "events". One of the default properties returned by this module is the event emitter, which we can use to create custom events, and react to those events when they are emitted. These custom events can be whatever you want. The event emitter is a constructor.
   After making the custom event, we can pass a parameter through the anonymous function that you add to the event, which you can name whatever you want.
   The way you emit an event is by using the emit property (instead of using the click or other stock js events). The emit property/function contains 2 parameters. The first argument is the name of the event, the second argument is the specification of what you want to happen, like in this example, in the second argument you would include the content of the msg parameter.
     EXAMPLE:
