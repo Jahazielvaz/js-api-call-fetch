@@ -40,6 +40,24 @@
 let events = require('events');
 let util = require('util');
 
-let Person = (name) => this.name = name;
+class People{
+  constructor(name){
+    this.name = name
+  }
+}
 
-util.inherits(Person, events.EventEmitter())
+util.inherits(People, events.EventEmitter);
+
+let vince = new People('Vince'),
+cloud = new People('Cloud'),
+tifa = new People('Tifa')
+
+let people = [vince, cloud, tifa];
+
+people.forEach((person) => {
+  person.on('speak', (msg) => console.log(`${person.name} says: ${msg}`));
+});
+
+vince.emit('speak', "I'm Vince and I need a phone");
+cloud.emit('speak', "All this dillydallying");
+tifa.emit('speak', "I'm the keeper here");
