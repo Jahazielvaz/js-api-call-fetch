@@ -14,8 +14,10 @@
 // console.log(__filename);
 
 // This totally works in regular js as well
-let func1 = () =>  console.log('I love this passing');
+// let func1 = () =>  console.log('I love this passing');
+//
+// let func2 = (fun) => fun();
+//
+// func2(func1);
 
-let func2 = (fun) => fun();
-
-func2(func1);
+let counter = require('./counter');
