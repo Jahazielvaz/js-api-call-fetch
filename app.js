@@ -37,27 +37,35 @@
 // myEmitter.emit('customEvent', 330, 50);
 
 // EVENTS MODULE 2
-let events = require('events');
-let util = require('util');
+// let events = require('events');
+// let util = require('util');
+//
+// class People{
+//   constructor(name){
+//     this.name = name
+//   }
+// }
+//
+// util.inherits(People, events.EventEmitter);
+//
+// let vince = new People('Vince'),
+// cloud = new People('Cloud'),
+// tifa = new People('Tifa')
+//
+// let people = [vince, cloud, tifa];
+//
+// people.forEach((person) => {
+//   person.on('speak', (msg) => console.log(`${person.name} says: ${msg}`));
+// });
+//
+// vince.emit('speak', "I'm Vince and I need a phone");
+// cloud.emit('speak', "All this dillydallying");
+// tifa.emit('speak', "I'm the keeper here");
 
-class People{
-  constructor(name){
-    this.name = name
-  }
-}
+//FS READING AND WRITING FILES
+let fs = require('fs');
 
-util.inherits(People, events.EventEmitter);
+let readMe = fs.readFileSync('INDEX-NOTES', 'utf8');
+// console.log(readMe);
 
-let vince = new People('Vince'),
-cloud = new People('Cloud'),
-tifa = new People('Tifa')
-
-let people = [vince, cloud, tifa];
-
-people.forEach((person) => {
-  person.on('speak', (msg) => console.log(`${person.name} says: ${msg}`));
-});
-
-vince.emit('speak', "I'm Vince and I need a phone");
-cloud.emit('speak', "All this dillydallying");
-tifa.emit('speak', "I'm the keeper here");
+fs.writeFileSync('README.md', readMe);

@@ -1,5 +1,5 @@
-DEFINITIONS
-Function Expressions: instead of directly naming the function you create an anonymous function and assign it to a variable name, and that's what's known as a function expression.
+## DEFINITIONS
+***Function Expressions:*** instead of directly naming the function you create an anonymous function and assign it to a variable name, and that's what's known as a function expression.
 Passing Functions Through Other Functions: You can pass one function as a parameter and execute it within the current function
 
 Module Patterns/module.exports: Here you specify which aspects of a module you want to make available, and you do this by setting the module.exports equal to the names of the methods you want to include within it. These can be stored as an object, as standalone methods, etc.
@@ -30,7 +30,7 @@ Reading and Writing Files using FS: fs is another node core module.
   fs.writeFileSync('myWrittenFile.txt', myFile): Just like in the method above, this one is also synchonous, however this actually writes a file instead of reading it. The first parameter is the chosen filename, as well as it's desired path. The second parameter is the actual content that you want to write in it, which in this is case is simply the content in the file called myFile.
 
 
-STOCK METHODS
+## STOCK METHODS
 __filename : Returns the name of the current file that's being invoked
 __dirname : Returns the name of the current directory that's being invoked
 setTimeout() : Just like in JS returns the given result based on a specified time
