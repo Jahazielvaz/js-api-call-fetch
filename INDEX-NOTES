@@ -30,8 +30,13 @@ Reading and Writing Files using FS: fs is another node core module.
   fs.writeFileSync('myWrittenFile.txt', myFile): Just like in the method above, this one is also synchonous, however this actually writes a file instead of reading it. The first parameter is the chosen filename, as well as it's desired path. The second parameter is the actual content that you want to write in it, which in this is case is simply the content in the file called myFile.
   fs.readFile('myFile', 'utf8', (err, data) => console.log(data))
     The fs.readFile method is just like file sync, except it's asynchonous, which means you need to add a third parameter in which you include an anonymous function which tells the function when to end, in this function you include error handling, and data which refers to the data that it's going to read.
-
     NOTE: When using asychonous functions (I guess only some of them such as writeFile), you must include a callback function, not including one is now deprecated. You will get an error otherwise.
+  fs.unlink('fileName'): Unlink is how you delete stuff. Simply invoke the method using fs, and include the file name, which in this example is called fileName.
+    NOTE: Again, just like in the example above, make sure you include a callback, because the deprecation also affects the unlink, I'm guessing because this is also an asynchronous function.
+  fs.mkdirSync('directory-name'): Just as the title implies, this method creates a directory, and it does it synchronously.
+  fs.mkdir('directory-name', (err) => console.log(err)): Makes a directory asynchonously, and of course, don't forget to include the callback.
+  fs.rmdir('directory-name', (err) => console.log(err)): Just like in the standard cl, this is how you get rid of empty directories, and just like in the standard cl, it only works for empty directories. 
+
 
 STOCK METHODS
 __filename : Returns the name of the current file that's being invoked

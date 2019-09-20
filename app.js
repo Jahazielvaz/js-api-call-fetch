@@ -63,7 +63,7 @@
 // tifa.emit('speak', "I'm the keeper here");
 
 //FS READING AND WRITING FILES
-// let fs = require('fs');
+let fs = require('fs');
 //
 // let readMe = fs.readFileSync('INDEX-NOTES', 'utf8');
 // console.log(readMe);
@@ -78,3 +78,7 @@
 // console.log('test')
 
 //CREATING AND REMOVING DIRECTORIES
+// fs.unlink('aSyncFile.txt', (err) => console.log(err));
+// fs.mkdir('puppies2', (err) => console.log(err));
+// fs.writeFile('./puppies2/cutePuppies.txt', 'I love cute puppies', (err) => console.log(err));
+fs.rmdir('./puppies2', (err) => console.log(err));
