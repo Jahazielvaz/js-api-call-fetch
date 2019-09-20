@@ -81,4 +81,4 @@ let fs = require('fs');
 // fs.unlink('aSyncFile.txt', (err) => console.log(err));
 // fs.mkdir('puppies2', (err) => console.log(err));
 // fs.writeFile('./puppies2/cutePuppies.txt', 'I love cute puppies', (err) => console.log(err));
-fs.rmdir('./puppies2', (err) => console.log(err));
+// fs.rmdir('./puppies2', (err) => console.log(err));

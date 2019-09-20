@@ -35,7 +35,23 @@ Reading and Writing Files using FS: fs is another node core module.
     NOTE: Again, just like in the example above, make sure you include a callback, because the deprecation also affects the unlink, I'm guessing because this is also an asynchronous function.
   fs.mkdirSync('directory-name'): Just as the title implies, this method creates a directory, and it does it synchronously.
   fs.mkdir('directory-name', (err) => console.log(err)): Makes a directory asynchonously, and of course, don't forget to include the callback.
-  fs.rmdir('directory-name', (err) => console.log(err)): Just like in the standard cl, this is how you get rid of empty directories, and just like in the standard cl, it only works for empty directories. 
+  fs.rmdir('directory-name', (err) => console.log(err)): Just like in the standard cl, this is how you get rid of empty directories, and just like in the standard cl, it only works for empty directories.
+
+BASIC WEB NETWORK
+
+DEFINITIONS
+Client: The computer or system requesting information.
+Server: the computer or system delivering the information.
+Socket: It is a channel to communicate established between the server and client.
+Protocol: The agreed upon set of rules (Like a language) of communication established between client and server.
+Packets: The TCP Protocol breaks the data down into little chunks called packets, or data packets. These packets are transferred through the socket.
+Port: Ports is how nodejs, and other languages listen for specific requests, and how clients are able to send the right information to the right server. You can think of a port as some soft of radio station/frequency. You can only communicate with that station if you tune in the right station number, and you're both tuned in to the same station. 
+Node JS: Node js gives us the ability to access all this functionality mentioned in this tutorial. It allows us to open the connection between 2 computers and send information. We can tell node what information we want to send out to clients as a response to their requests.
+
+PROTOCOLS
+FTP : Stands for File Transfer Protocol, and just like its name implies, this is the protocol used for transferring files.
+HTTP : Stands for Hyper Text Transfer Protocol. This Protocol is basically used for websites.
+TCP : Stands for Transmission Control Protocol. This protocol is responsible for sending the data between client and server via a socket. So to clear the confusion, the way the data is structured has to do with the http, or ftp protocols, but the way the data is transferred/sent, is determined by the tcp protocol.
 
 
 STOCK METHODS
