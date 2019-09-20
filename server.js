@@ -1,5 +1,5 @@
 let http = require('http');
-let greetings = require('./greetings');
+// let greetings = require('./greetings');
 
 let onRequest = (req, res) => {
   res.writeHead(200, {'Content-Type': 'text-plain'});

@@ -28,7 +28,10 @@ Util Module: Util stands for utilities. The util module allows us to do multiple
 Reading and Writing Files using FS: fs is another node core module.
   fs.readFileSync('myFile', 'utf8'): This is a synchonous method which means it won't execute the follow up code until it's finished reading the file. The first parameter is the name of the file, along with it's file path if applicable.
   fs.writeFileSync('myWrittenFile.txt', myFile): Just like in the method above, this one is also synchonous, however this actually writes a file instead of reading it. The first parameter is the chosen filename, as well as it's desired path. The second parameter is the actual content that you want to write in it, which in this is case is simply the content in the file called myFile.
+  fs.readFile('myFile', 'utf8', (err, data) => console.log(data))
+    The fs.readFile method is just like file sync, except it's asynchonous, which means you need to add a third parameter in which you include an anonymous function which tells the function when to end, in this function you include error handling, and data which refers to the data that it's going to read.
 
+    NOTE: When using asychonous functions (I guess only some of them such as writeFile), you must include a callback function, not including one is now deprecated. You will get an error otherwise.
 
 STOCK METHODS
 __filename : Returns the name of the current file that's being invoked
