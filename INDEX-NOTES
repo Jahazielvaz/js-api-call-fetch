@@ -7,7 +7,7 @@ Module Patterns/module.exports: Here you specify which aspects of a module you w
 
 Require: This allows you to access the methods returned by the module.exports of the module of choice. You invoke this by including the path within the require() method. And of course it's a good idea to store it in a variable, so you can access it easier.
 
-Event Module: This is a core module. The module is called "events". One of the default properties returned by this module is the event emitter, which we can use to create custom events, and react to those events when they are emitted. These custom events can be whatever you want. The event emitter is a constructor.
+EVENT MODULE: This is a core module. The module is called "events". One of the default properties returned by this module is the event emitter, which we can use to create custom events, and react to those events when they are emitted. These custom events can be whatever you want. The event emitter is a constructor.
   After making the custom event, we can pass a parameter through the anonymous function that you add to the event, which you can name whatever you want.
   The way you emit an event is by using the emit property (instead of using the click or other stock js events). The emit property/function contains 2 parameters. The first argument is the name of the event, the second argument is the specification of what you want to happen, like in this example, in the second argument you would include the content of the msg parameter.
     EXAMPLE:
@@ -20,12 +20,12 @@ Event Module: This is a core module. The module is called "events". One of the d
 
       myEmitter.emit('myCustomEvent', 'This is my hidden message');
 
-Util Module: Util stands for utilities. The util module allows us to do multiple things including to inherit certain things from object building to nodejs.
+UTIL MODULE: Util stands for utilities. The util module allows us to do multiple things including to inherit certain things from object building to nodejs.
   As explained above, util has many properties, but the one we want to focus on right now is the inheritance one. You trigger it by using util.inherits()
   util.inherits(): The first parameter in inherits is the method, or object which wants to inherit. The second parameter is what the target object or parameter actually wants to inherit. Which is this example is the event emitter.
   So at this point, it's going to inherit the event emitter, and anything created using the person method, will inherit that emitter.
 
-Reading and Writing Files using FS: fs is another node core module.
+READING AND WRITING FILES, AS WELL AS CREATING AND REMOVING DIRECTORIES USING FS: fs is another node core module.
   fs.readFileSync('myFile', 'utf8'): This is a synchonous method which means it won't execute the follow up code until it's finished reading the file. The first parameter is the name of the file, along with it's file path if applicable.
   fs.writeFileSync('myWrittenFile.txt', myFile): Just like in the method above, this one is also synchonous, however this actually writes a file instead of reading it. The first parameter is the chosen filename, as well as it's desired path. The second parameter is the actual content that you want to write in it, which in this is case is simply the content in the file called myFile.
   fs.readFile('myFile', 'utf8', (err, data) => console.log(data))
@@ -37,6 +37,14 @@ Reading and Writing Files using FS: fs is another node core module.
   fs.mkdir('directory-name', (err) => console.log(err)): Makes a directory asynchonously, and of course, don't forget to include the callback.
   fs.rmdir('directory-name', (err) => console.log(err)): Just like in the standard cl, this is how you get rid of empty directories, and just like in the standard cl, it only works for empty directories.
 
+STOCK METHODS
+  __filename : Returns the name of the current file that's being invoked
+  __dirname : Returns the name of the current directory that's being invoked
+  setTimeout() : Just like in JS returns the given result based on a specified time
+  setInterval() : Just like in JS returns the given result based on a looped timer
+  clearInterval() : Standard JS
+---------------------------------------------------
+
 BASIC WEB NETWORK
 
 DEFINITIONS
@@ -45,18 +53,29 @@ Server: the computer or system delivering the information.
 Socket: It is a channel to communicate established between the server and client.
 Protocol: The agreed upon set of rules (Like a language) of communication established between client and server.
 Packets: The TCP Protocol breaks the data down into little chunks called packets, or data packets. These packets are transferred through the socket.
-Port: Ports is how nodejs, and other languages listen for specific requests, and how clients are able to send the right information to the right server. You can think of a port as some soft of radio station/frequency. You can only communicate with that station if you tune in the right station number, and you're both tuned in to the same station. 
+Port: Ports is how nodejs, and other languages listen for specific requests, and how clients are able to send the right information to the right server. You can think of a port as some soft of radio station/frequency. You can only communicate with that station if you tune in the right station number, and you're both tuned in to the same station.
+Headers: When we send a request to a server, we can request a header. We can also respond with the response as well as a response header. You can think of headers as extra information about the request, or the response. Much like in html you have a head section which tells the browser a little bit more about your page, even though it doesn't actually show on the browser.
+  LIST OF THINGS WE CAN PUT IN THE HEADERS: Content Type, Status
 Node JS: Node js gives us the ability to access all this functionality mentioned in this tutorial. It allows us to open the connection between 2 computers and send information. We can tell node what information we want to send out to clients as a response to their requests.
+
 
 PROTOCOLS
 FTP : Stands for File Transfer Protocol, and just like its name implies, this is the protocol used for transferring files.
 HTTP : Stands for Hyper Text Transfer Protocol. This Protocol is basically used for websites.
 TCP : Stands for Transmission Control Protocol. This protocol is responsible for sending the data between client and server via a socket. So to clear the confusion, the way the data is structured has to do with the http, or ftp protocols, but the way the data is transferred/sent, is determined by the tcp protocol.
+-----------------------------------------------------
 
+BUILDING A SERVER
 
-STOCK METHODS
-__filename : Returns the name of the current file that's being invoked
-__dirname : Returns the name of the current directory that's being invoked
-setTimeout() : Just like in JS returns the given result based on a specified time
-setInterval() : Just like in JS returns the given result based on a looped timer
-clearInterval() : Standard JS
+HTTP CORE MODULE: the http module contains all the methods we need to create a server.
+  http.createServer((req, res) => {
+
+  }) : This method creates a server, and it takes in an anonymous function, which takes in 2 parameters (I think maybe even 3 if you want to do error handling), it takes a request and a response parameter. the request or req parameter is loaded with details about the request that's being made. And the response or res object is something we can use to send a response back to the client.
+
+  res.writeHead(200): This is how you write a header. The first parameter is the status, which in this case is 200 which means no anomalies, its ok. The second parameter is an object which tells it the content type. The value can be html, plain text, or json.
+
+  res.end('Returned text'): You can use the res.end() method to end the response, or the request, and within the parameter, you can have it return something.
+
+  server.listen(3000, '123.0.0.1'): This is how you listen for a specific port number. The first parameter is the port number, and the second parameter is the IP address. In this example, that would be local host.
+
+  req.url: This is a property that I can access in the request object, and this will give me the url that made the request.

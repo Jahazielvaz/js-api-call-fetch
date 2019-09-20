@@ -82,3 +82,6 @@ let fs = require('fs');
 // fs.mkdir('puppies2', (err) => console.log(err));
 // fs.writeFile('./puppies2/cutePuppies.txt', 'I love cute puppies', (err) => console.log(err));
 // fs.rmdir('./puppies2', (err) => console.log(err));
+
+// fs.unlink('server.js', (err) => console.log(err));
+fs.writeFile('./server.js', '//Server', (err) => console.log(err));
