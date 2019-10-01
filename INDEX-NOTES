@@ -57,6 +57,8 @@ Port: Ports is how nodejs, and other languages listen for specific requests, and
 Headers: When we send a request to a server, we can request a header. We can also respond with the response as well as a response header. You can think of headers as extra information about the request, or the response. Much like in html you have a head section which tells the browser a little bit more about your page, even though it doesn't actually show on the browser.
   LIST OF THINGS WE CAN PUT IN THE HEADERS: Content Type, Status
 Node JS: Node js gives us the ability to access all this functionality mentioned in this tutorial. It allows us to open the connection between 2 computers and send information. We can tell node what information we want to send out to clients as a response to their requests.
+Buffer: Temporary storage spot for a chunck of data that's being transferred from one place to another. The buffer is filled with data, and passed along. Transfer small chunks of data at a time. So if we have a large amount of data, we can move it little by little by storing it in a buffer.
+Streams: These are just what they sound like. Streams of data. Think of it like a river, through which water flows. The data flows through the stream, and goes into the buffer. Once the buffer is filled up, it transfers the data through the stream for it to be processed.
 
 
 PROTOCOLS
@@ -79,3 +81,23 @@ HTTP CORE MODULE: the http module contains all the methods we need to create a s
   server.listen(3000, '123.0.0.1'): This is how you listen for a specific port number. The first parameter is the port number, and the second parameter is the IP address. In this example, that would be local host.
 
   req.url: This is a property that I can access in the request object, and this will give me the url that made the request.
+_______________________________________________________
+
+STREAMS AND BUFFERS: This is a way that data can be transferred between places, in a super efficient manner. It's a process of breaking down the data into little chunks. This makes it so that there's less clutter, and it makes it so that the client can start consuming the data right away, without having to wait for all the data to arrive.
+
+TYPES OF STREAMS
+Writeable Streams: Allow node js to data to a stream.
+Readable Streams: Allow node js to read data from a stream.
+Duplex Streams: Can read and write to a stream.
+
+PIPES: Pipes simplify your code and they make it so that you don't have to create an event, but rather you can use the built in pipe method. NOTE the response object is a writable stream.
+
+--------------------------------------------------------
+CONTENT-TYPE
+Here is a list of the types of content you can write, and the syntax for it
+
+-Plain Text: {'Content-Type': 'text/plain'}
+-HTML File: {'Content-Type': 'text/html'}
+-JSON Data: {'Content-Type': 'application/json'}
+
+NOTE: Remember that the res.end() method expects either a string, or a buffer. So if you want to serve JSON data, or any other data format, you need to convert it to a string or a buffer. One way to do that is with JSON.stringify()

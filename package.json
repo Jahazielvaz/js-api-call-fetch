@@ -1,0 +1,23 @@
+{
+  "name": "js-api-call-fetch",
+  "version": "1.0.0",
+  "description": "DEFINITIONS Function Expressions: instead of directly naming the function you create an anonymous function and assign it to a variable name, and that's what's known as a function expression. Passing Functions Through Other Functions: You can pass one function as a parameter and execute it within the current function",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jahazielvaz/js-api-call-fetch.git"
+  },
+  "author": "Imagine Tech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jahazielvaz/js-api-call-fetch/issues"
+  },
+  "homepage": "https://github.com/Jahazielvaz/js-api-call-fetch#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

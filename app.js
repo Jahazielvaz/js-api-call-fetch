@@ -84,4 +84,18 @@ let fs = require('fs');
 // fs.rmdir('./puppies2', (err) => console.log(err));
 
 // fs.unlink('server.js', (err) => console.log(err));
-fs.writeFile('./server.js', '//Server', (err) => console.log(err));
+// fs.writeFile('./server.js', '//Server', (err) => console.log(err));
+
+// fs.writeFile('sample-text.txt', 'Bunch of text needs to be writen here', (err) => console.log(err));
+
+// let readStream = fs.createReadStream(__dirname + '/sample-text.txt');
+// let writeStream = fs.createWriteStream(__dirname + '/writeMe.txt');
+
+//Without pipes we have to manually listen for the stream
+// readStream.on('data', (data) => {
+//   writeStream.write(data)
+// });
+
+//Pipes allows you to automate the wrting process. Pipes only work on readable streams.
+// readStream.pipe(writeStream);
+// fs.unlink('./writeMe.txt', (err) => console.log(err));
