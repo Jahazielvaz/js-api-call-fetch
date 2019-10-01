@@ -109,9 +109,14 @@ app.get('/', (req, res) => {
   res.send('My current homepage');
 });
 
-app.get('/about', (req, res) => {
-  res.send('My about page');
-})
+app.get('/contact', (req, res) => {
+  res.sendFile(__dirname + '/contact.html');
+});
+
+// PARAMS
+app.get('/profile/:id', (req, res) => {
+   res.send(`Welcome back ${req.params.id}`);
+});
 
 
 app.listen(3000);
