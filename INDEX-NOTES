@@ -101,3 +101,24 @@ Here is a list of the types of content you can write, and the syntax for it
 -JSON Data: {'Content-Type': 'application/json'}
 
 NOTE: Remember that the res.end() method expects either a string, or a buffer. So if you want to serve JSON data, or any other data format, you need to convert it to a string or a buffer. One way to do that is with JSON.stringify()
+
+--------------------------------------------------------
+
+                          EXPRESS
+
+BUILDING A SERVER
+
+let express = require('express');
+
+let app = express();
+
+app.get('/', (req, res) => {
+  res.send('This line will be sent once request is made on route /')
+})
+
+app.listen(3000)
+
+-----------------
+PARAMS: Params are great for building dynamic routes. Think of something like a social network, where each member has a different homepage or different profile.
+
+Params are executed by adding a colon followed by the param name as a path. This param can then be used by the request object

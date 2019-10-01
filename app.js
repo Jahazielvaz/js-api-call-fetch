@@ -99,3 +99,20 @@ let fs = require('fs');
 //Pipes allows you to automate the wrting process. Pipes only work on readable streams.
 // readStream.pipe(writeStream);
 // fs.unlink('./writeMe.txt', (err) => console.log(err));
+
+// EXPRESS TUTORIAL SECTION
+let express = require('express');
+
+let app = express();
+
+app.get('/', (req, res) => {
+  res.send('My current homepage');
+});
+
+app.get('/about', (req, res) => {
+  res.send('My about page');
+})
+
+
+app.listen(3000);
+console.log('Server running on port 3000');
