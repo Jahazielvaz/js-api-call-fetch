@@ -114,10 +114,23 @@ app.get('/contact', (req, res) => {
 });
 
 // PARAMS
-app.get('/profile/:id', (req, res) => {
-   res.send(`Welcome back ${req.params.id}`);
+app.get('/people/:id', (req, res) => {
+   res.send(`Welcome Back ${req.params.id}`);
 });
 
+// SERVING VIEW TEMPLATES. IN THIS CASE EJS
+app.set('view engine', 'ejs');
+app.get('/profile/:name', (req, res) => {
+  let data = {
+    age: 33,
+    career: 'Software Engineer/Entrepreneur',
+    strength: 'He executes like a powerful CEO'
+  }
 
+  res.render('profile', {person: req.params.name, info: data})
+})
+
+
+// PORT
 app.listen(3000);
 console.log('Server running on port 3000');

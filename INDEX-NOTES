@@ -133,3 +133,16 @@ EJS: This is one of the templating engine packages available in express. This is
 
   SETTING IT AS THE VIEW ENGINE: The next thing we need to do is to tell express that we want to use this package as our view engine.
     app.set('view engine', 'ejs');
+
+    NOTE: By default, when we request some views, ejs is going to look in the view directory, so make sure you have a view folder available.
+    RES.RENDER: The difference between res.send and res.render, is that res.render is used to render out views, where as send is used to send regular html files.
+
+    FEEDING DYNAMIC CONTENT TO A VIEW: Inside the render method, as you know the first parameter is for the name of the view, but in the second parameter, you can add an object, and put the param as the value. See example below.
+      EXAMPLE:
+        res.render('my-view', {keyName: req.params.param-name});
+
+        EXPLANATION: So in the example above, we're passing the data of the parameter called param-name, into the view called my-view, using the property called keyName.
+
+    USING THE DYNAMIC CONTENT IN THE TARGET VIEW: The way you set the object inside the view is to simply add the following code anywhere in the view where you want to display the dynamic content: <%= keyName %>
+
+    PASSING JS THROUGH VIEWS: You can actually pass in js and other dynamic features into the view.
