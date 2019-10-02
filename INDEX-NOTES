@@ -146,3 +146,8 @@ EJS: This is one of the templating engine packages available in express. This is
     USING THE DYNAMIC CONTENT IN THE TARGET VIEW: The way you set the object inside the view is to simply add the following code anywhere in the view where you want to display the dynamic content: <%= keyName %>
 
     PASSING JS THROUGH VIEWS: You can actually pass in js and other dynamic features into the view.
+
+    PARTIAL VIEWS: They allow you to reuse html code. I guess these would be like modules that you can use in multiple places, such as if you had a navigation that you want to use throughout the entire site.
+
+    SERVING STATIC FILES/MIDDLEWARE: Files such as css, images, etc. These are also requests, and we need to find a way to deal with them other than adding handlers for each of these. This is precisely the purpose of middleware. Middleware is essentially the code that runs between the request and the response.
+      APP.USE: True syntax is app.use(). It's purpose is to use middleware. We can match this middleware to a specific route, or otherwise it's going to run on every request that is made. 

@@ -2,10 +2,10 @@
   "name": "js-api-call-fetch",
   "version": "1.0.0",
   "description": "DEFINITIONS Function Expressions: instead of directly naming the function you create an anonymous function and assign it to a variable name, and that's what's known as a function expression. Passing Functions Through Other Functions: You can pass one function as a parameter and execute it within the current function",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
