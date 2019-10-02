@@ -150,4 +150,15 @@ EJS: This is one of the templating engine packages available in express. This is
     PARTIAL VIEWS: They allow you to reuse html code. I guess these would be like modules that you can use in multiple places, such as if you had a navigation that you want to use throughout the entire site.
 
     SERVING STATIC FILES/MIDDLEWARE: Files such as css, images, etc. These are also requests, and we need to find a way to deal with them other than adding handlers for each of these. This is precisely the purpose of middleware. Middleware is essentially the code that runs between the request and the response.
-      APP.USE: True syntax is app.use(). It's purpose is to use middleware. We can match this middleware to a specific route, or otherwise it's going to run on every request that is made. 
+      APP.USE: True syntax is app.use(). It's purpose is to use middleware. We can match this middleware to a specific route, or otherwise it's going to run on every request that is made.
+
+    QUERY STRINGS: Query strings are just additional data added on to an http request in the form of key value pairs.
+      Place of Use: The query string is used in the url bar.
+
+      ?: The question mark activates the query string. Then the string is followed by a key value pair
+        ?sample-key=sample-value
+
+      &: The ampersand is used to add additional query strings. See example below.
+        ?sample-key=sample-value&new-sample-key=new-sample-value
+
+      req.query: When you execute a query string as a request, it returns an object which can be accessed by the express built in req property called query

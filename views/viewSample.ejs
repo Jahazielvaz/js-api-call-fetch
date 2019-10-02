@@ -11,5 +11,18 @@
     <% profile.forEach((stuff) => { %>
         <li><%= stuff %></li>
     <% }) %>
+
+    <h2>Additional Information</h2>
+    <form action="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" name="name" value="<%= query.name %>">
+
+      <label for="username">Your Username:</label>
+      <input type="text" name="username" value="<%= query.username %>">
+
+      <label for="password" value="<%= query.password %>">Your Password</label>
+      <input type="password" name="password">
+      <input type="submit" placeholder="Submit">
+    </form>
   </body>
 </html>

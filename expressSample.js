@@ -21,8 +21,7 @@ app.get('/', (req, res) => {
 
 app.get('/sample/:profile', (req, res) => {
   let profile = ['Jazzy', 'Vazquez','Entrepreneur/Software Engineer']
-
-  res.render('viewSample', {profile: Array.from(profile), name: req.params.profile})
+  res.render('viewSample', {profile: Array.from(profile), name: req.params.profile, query: req.query})
 })
 
 app.listen(3000);
