@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Profile Section</title>
+  </head>
+  <body>
+    <h1>Welcome: <%= name %> </h1>
+    <h2>Special Information</h2>
+    <% profile.forEach((stuff) => { %>
+        <li><%= stuff %></li>
+    <% }) %>
+  </body>
+</html>

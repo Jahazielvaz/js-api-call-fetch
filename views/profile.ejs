@@ -17,6 +17,11 @@
       <li>age: <%= info.age %></li>
       <li>career: <%= info.career %></li>
       <li>Strength: <%= info.strength %></li>
+
+      <h2>Interests</h2>
+      <% interests.forEach((stuff) => { %>
+        <li><%= stuff %></li>
+      <%});%>
     </ul>
   </body>
 </html>
