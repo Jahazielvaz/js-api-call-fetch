@@ -162,3 +162,33 @@ EJS: This is one of the templating engine packages available in express. This is
         ?sample-key=sample-value&new-sample-key=new-sample-value
 
       req.query: When you execute a query string as a request, it returns an object which can be accessed by the express built in req property called query
+
+----------------------------------------------
+
+HANDLING POST REQUESTS: You need additional middleware in order to handle incoming post requests.
+
+  BODY-PARSER: Body parser allows you to parse through all types of different data coming through post requests.
+
+   INSTALLATION: Standard.
+
+   ADDING IT: Standard (Require) let bodyParser = require('body-parser');
+
+   URL ENCODED: let urlencodedParser = boyParser.urlencoded({extended: false});
+
+   PARSING THROUGH JSON DATA: let jsonParser = bodyParser.json();
+
+   APP() METHODS
+   app.get() : Processes a get request. This request comes from the browser. For example, once a user types in a url, the browser requests that html file. The get method handles the logic for that request and sends that html page back to the browser.
+   app.post() : When a user inputs data, and that data needs to be stored somewhere, the server handles what to do with that data through a post request.
+   app.use() : The purpose is to assign certain static middleware to a path.
+   app.set() : We use it to set the templating engine of our choice which happens to currently be ejs.
+
+   REQ PROPERTIES
+   req.params : Gives you access to the express route params. See example below.
+      app.get('/myroute/:param-name', (req, res) => res.render('view-name', {chosen-key-name: req.params.param-name}))
+
+   req.url : Gives you the name of the url making the request.
+
+   req.query : Gives you access to all query strings listed in the url.
+
+   req.body : Gives you access to all the data coming in from the client trough the post request. 

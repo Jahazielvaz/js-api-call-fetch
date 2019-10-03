@@ -119,20 +119,20 @@
 // });
 //
 // // SERVING VIEW TEMPLATES. IN THIS CASE EJS
-app.set('view engine', 'ejs');
-app.get('/profile/:name', (req, res) => {
-  let data = {
-    age: 33,
-    career: 'Software Engineer/Entrepreneur',
-    strength: 'He executes like a powerful CEO'
-  }
-
-  let interests = ['Software Engineering', 'Computer Networking', 'Hacking', 'Physics', 'Nature'];
-
-  res.render('profile', {person: req.params.name, info: data, interests: interests})
-})
-
-
-// PORT
-app.listen(3000);
-console.log('App Server running on port 3000');
+// app.set('view engine', 'ejs');
+// app.get('/profile/:name', (req, res) => {
+//   let data = {
+//     age: 33,
+//     career: 'Software Engineer/Entrepreneur',
+//     strength: 'He executes like a powerful CEO'
+//   }
+//
+//   let interests = ['Software Engineering', 'Computer Networking', 'Hacking', 'Physics', 'Nature'];
+//
+//   res.render('profile', {person: req.params.name, info: data, interests: interests})
+// })
+//
+//
+// // PORT
+// app.listen(3000);
+// console.log('App Server running on port 3000');

@@ -1,0 +1,35 @@
+body{
+  background: lightblue;
+}
+
+#form{
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px 5px rgba(0, 0, 0, .3);
+  padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  background: #eee;
+  padding: 40px 10px;
+}
+
+
+
+.fields{
+  /* border: 2px solid black; */
+  overflow: hidden;
+  width: 90%;
+  display: block;
+  margin: 5px auto;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+input{
+  box-shadow: 2px 2px 3px 5px rgba(0, 0, 0, .3);
+}
+
+
+
+textarea{
+  resize: none;
+}
